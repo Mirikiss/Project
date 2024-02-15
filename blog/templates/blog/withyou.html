@@ -1,0 +1,79 @@
+{% load static %}
+
+<html >
+<head>
+	<title>О нас</title>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" href="{% static 'css/style.css'%}" type="text/css" media="all" />
+
+	<link rel="shortcut icon" href="css/images/favicon.ico" />
+
+</head>
+<body>
+<div class="shell">
+	<div class="border">
+
+		<div id="navigation">
+			<ul>
+			    <li><a href="/blog" class="active">Главная</a></li>
+			    <li><a href="/admin">Админ панель</a></li>
+				<li><a href="#">О нас</a></li>
+
+			</ul>
+		</div>
+
+		<div id="main">
+			<div id="content" class="left">
+
+				<div class="projects">
+					<h3 align="center"></h3>
+					{% for post in post_list %}
+					<div class="item">
+						<div class="image left">
+							<a href="#"><img src="{{ post.img.url }}" width="200px" /></a>
+						</div>
+						<div class="text left">
+							<h4><a href="{{post.id}}">{{ post.title }}</a></h4>
+							<p>{{ post.description }}</p>
+							<p>Автор: {{ post.author }} </p>
+						</div>
+						<div class="cl">&nbsp;</div>
+					</div>
+					{% endfor %}
+
+				</div>
+			</div>
+
+			<div class="cl">&nbsp;</div>
+		</div>
+
+<div class="news-text">
+
+<p><strong>Реквизиты и юридический адрес:</strong></p>
+
+<p>ООО «Newspapers» </p>
+
+<p>220123, г. Минск, ул. Старовиленская, 100/7, 2-й этаж<br>
+УНП 190675492.<br>
+ОКПО 37642508.<br>
+Р/с BY40TECN30120648100060000000&nbsp;в ОАО «Технобанк», г. Минск, ул. Кропоткина, д. 44,&nbsp;TECNBY22.</p>
+
+<p>Директор — Cтанислав Денис Васильевич.</p>
+
+<p>Сетевое издание «Newspapers». Свидетельство о государственной регистрации средства массовой информации №16 от 26.06.2019 выдано Министерством информации Республики Беларусь.</p>
+
+<p>Главный редактор — Петров Андрей Александрович.</p>
+
+<p>Телефоны:<br>
++375 (17) 270-23-30;<br>
++375 (29) 775-11-80;<br>
++375 (44) 775-22-80.</p>
+
+<p>E-mail: Newspapers@mail.ru.</p>
+
+	<div id="footer">
+		<p class="copy right">Copyright &copy;  2022 </p>
+	</div>
+</div>
+</body>
+</html>
